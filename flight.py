@@ -33,7 +33,7 @@ def main():
     month = st.slider("month" ,min_value=1, max_value=12, value=1, step=1)
     Time_of_Dep = st.selectbox("Time_of_Dep" ,['Night', 'Morning', 'Evening', 'Afternoon'])
     Time_of_Arrival = st.selectbox("Time_of_Arrival",['Night', 'Morning', 'Evening', 'Afternoon'])
-    Duration_in_Minutes = st.slider("Duration_in_Minutes" ,min_value=120, max_value=2860, value=500, step=60 )
+    Duration_in_Minutes = st.slider("Duration_in_Minutes" ,min_value=70, max_value=2860, value=500, step=60 )
     if st.button("Predict Price"):
         result = Predicitons(Airline, Source, Destination, Total_Stops, Additional_Info, day, month,  Time_of_Dep, Time_of_Arrival, Duration_in_Minutes)
         st.success(f"Predicted Flight Price: {result:.2f}$")
